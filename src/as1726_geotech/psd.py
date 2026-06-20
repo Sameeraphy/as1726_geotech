@@ -6,7 +6,7 @@ retained masses or percent-passing data.
 """
 from __future__ import annotations
 
-from typing import Iterable, List, Optional, Tuple
+from typing import Iterable, List, Optional, Tuple, Dict
 import math
 
 
@@ -134,6 +134,102 @@ def compute_gradation(sieve_sizes: Iterable[float], retained: Optional[Iterable[
     }
 
 
+def plot_gradation(sizes: Iterable[float], percent_passing: Iterable[float], title: str = "Particle Size Distribution", show: bool = True):
+    """Plot PSD curve (semilog: log size vs linear percent).
+
+    Args:
+        sizes: sieve sizes (mm).
+        percent_passing: percent passing values (0-100).
+        title: plot title.
+        show: if True, display plot; else return figure.
+
+    Returns:
+        matplotlib figure if show=False, else None.
+    """
+    try:
+        import matplotlib.pyplot as plt
+    except ImportError:
+        raise ImportError("matplotlib is required for plotting. Install with: pip install matplotlib")
+
+    fig, ax = plt.subplots(figsize=(10, 6))
+    s = list(sizes)
+    p = list(percent_passing)
+    # Sort by size
+    paired = sorted(zip(s, p), key=lambda x: x[0], reverse=True)
+    s = [x[0] for x in paired]
+    p = [x[1] for x in paired]
+
+    ax.semilogx(s, p, 'b-o', linewidth=2, markersize=6, label="PSD")
+    ax.set_xlabel("Particle Size (mm)", fontsize=12)
+    ax.set_ylabel("Percent Passing (%)", fontsize=12)
+    ax.set_title(title, fontsize=14, fontweight="bold")
+    ax.grid(True, which="both", alpha=0.3)
+    ax.legend()
+    ax.set_ylim([0, 100])
+
+    if show:
+        plt.show()
+        return None
+    else:
+        return fig
+
+
+def load_from_excel(file_path: str, sieve_col: str = "Sieve (mm)", retained_col: str = "Retained (g)") -> Dict[str, List[float]]:
+    """Load PSD data from Excel file.
+
+    Expected Excel format:
+    - Column headers: "Sieve (mm)" and "Retained (g)" (customizable)
+    - Rows: sieve size and corresponding retained mass
+
+    Args:
+        file_path: path to Excel file (.xlsx).
+        sieve_col: name of sieve size column.
+        retained_col: name of retained mass column.
+
+    Returns:
+        dict with keys "sieves" and "retained" containing lists of values.
+
+    Example:
+        >>> data = load_from_excel("sample.xlsx")
+        >>> sizes, percent = percent_passing_from_retained(data["sieves"], data["retained"])
+    """
+    try:
+        import openpyxl
+    except ImportError:
+        raise ImportError("openpyxl is required for Excel support. Install with: pip install openpyxl")
+
+    wb = openpyxl.load_workbook(file_path)
+    ws = wb.active
+
+    # Find column indices
+    sieve_idx = None
+    retained_idx = None
+    for col_idx, cell in enumerate(ws[1], 1):
+        if cell.value and str(cell.value).strip().lower() == sieve_col.lower():
+            sieve_idx = col_idx
+        if cell.value and str(cell.value).strip().lower() == retained_col.lower():
+            retained_idx = col_idx
+
+    if sieve_idx is None or retained_idx is None:
+        raise ValueError(f"Columns '{sieve_col}' and/or '{retained_col}' not found in Excel file")
+
+    sieves = []
+    retained = []
+
+    # Read data rows (skip header)
+    for row_idx, row in enumerate(ws.iter_rows(min_row=2, values_only=True), 2):
+        if row[sieve_idx - 1] is not None and row[retained_idx - 1] is not None:
+            try:
+                sieves.append(float(row[sieve_idx - 1]))
+                retained.append(float(row[retained_idx - 1]))
+            except (ValueError, TypeError):
+                continue
+
+    if not sieves:
+        raise ValueError("No valid data found in Excel file")
+
+    return {"sieves": sieves, "retained": retained}
+
+
 # Backwards-compatible simple function name
 particle_size_distribution = compute_gradation
-*** End Patch
