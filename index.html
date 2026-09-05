@@ -3,131 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Geotechnical Engineering Tools</title>
+    <title>Geotechnical Tools Index • Under Construction</title>
     <meta
       name="description"
-      content="Geotechnical engineering tools and calculators for point load tests, soil grading, and rock classification."
+      content="Geotechnical Tools Index under construction with live calculators for soil and rock testing."
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="landing-page">
-    <div class="screen screen-photo">
-      <img
-        class="backdrop"
-        src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1800&q=80"
-        alt="Geotechnical engineering site"
-      />
+  <body class="construction-page">
+    <div class="construction-shell">
+      <div class="construction-badge">Under construction</div>
 
-      <header class="screen-head">
-        <a class="wordmark" href="/">
-          <span class="wordmark-mark" aria-hidden="true">G</span>
-          GeoLab Index
-        </a>
-
-        <nav class="variant-switch" aria-label="Main navigation">
-          <a class="active" href="/point-load-test-calculator/">Point Load</a>
-          <a href="#features">PSD</a>
-          <a href="#features">Rock Types</a>
-          <a href="#features">Lab Index</a>
-        </nav>
+      <header class="hero">
+        <p class="eyebrow">Geotechnical Tools Index</p>
+        <h1>Site under development</h1>
+        <p class="intro">
+          This index page is being expanded for geotechnical engineering tools, field notes,
+          and laboratory calculators. The live modules are being added gradually.
+        </p>
       </header>
 
-      <main class="screen-body">
-        <div class="hero-copy">
-          <span class="badge badge-subtle">Launching soon</span>
-          <h1>Geotechnical tools for field, lab and rock assessment</h1>
-          <p>
-            Our engineering portal is being developed for practical soil, rock and testing calculations.
-            The first live module is the AS 4133.4.1 point load calculator for rock strength assessment.
-          </p>
+      <nav class="tool-nav" aria-label="Geotechnical tools">
+        <a class="tool-link active" href="/point-load-test-calculator/">Point Load Test Calculator</a>
+        <a class="tool-link" href="/PSD/">PSD Analysis</a>
+        <a class="tool-link" href="#">CPT (coming soon)</a>
+      </nav>
 
-          <div class="countdown" role="timer" aria-live="off" data-countdown="2026-10-01T09:00:00Z">
-            <div class="count-cell">
-              <span class="count-value" id="cdD">--</span>
-              <span class="count-label">Days</span>
-            </div>
-            <div class="count-cell">
-              <span class="count-value" id="cdH">--</span>
-              <span class="count-label">Hours</span>
-            </div>
-            <div class="count-cell">
-              <span class="count-value" id="cdM">--</span>
-              <span class="count-label">Minutes</span>
-            </div>
-            <div class="count-cell">
-              <span class="count-value" id="cdS">--</span>
-              <span class="count-label">Seconds</span>
-            </div>
-          </div>
+      <section class="module-grid" aria-label="Available modules">
+        <article class="module-card active">
+          <span class="tag">AS 4133.4.1</span>
+          <h2>Point load</h2>
+          <p>Rock strength assessment using diametral, axial, block and irregular lump sample geometries.</p>
+        </article>
 
-          <div class="cta-row">
-            <a class="btn btn-primary" href="/point-load-test-calculator/">Open Point Load Calculator</a>
-            <a class="btn btn-secondary" href="#features">View planned modules</a>
-          </div>
+        <article class="module-card">
+          <span class="tag">PSD</span>
+          <h2>Sieve analysis</h2>
+          <p>Particle size distribution and soil grading calculations for geotechnical classification.</p>
+        </article>
 
-          <form class="notify" action="#" method="get">
-            <label class="visually-hidden" for="notifyEmail">Email address</label>
-            <input id="notifyEmail" type="email" placeholder="you@example.com" />
-            <button type="submit">Request access</button>
-          </form>
-        </div>
-      </main>
-
-      <footer class="screen-foot">
-        <p>&copy; <span data-year></span> GeoLab Index</p>
-        <span class="social" aria-label="Social links">
-          <a href="#" aria-label="LinkedIn">
-            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.4 5.5h2.2V13H3.4zm1.1-3.3a1.3 1.3 0 1 1 0 2.6 1.3 1.3 0 0 1 0-2.6zM7.2 5.5h2.1v1c.3-.6 1.1-1.2 2.2-1.2 2 0 2.5 1.3 2.5 3.1V13h-2.2V8.9c0-1-.2-1.7-1.2-1.7s-1.3.7-1.3 1.6V13H7.2z"/></svg>
-          </a>
-          <a href="#" aria-label="X">
-            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M12.6 1.5h2.2l-4.8 5.5 5.7 7.5h-4.5l-3.5-4.6-4 4.6H1.5l5.2-5.9L1.2 1.5h4.6l3.2 4.2zm-.8 11.7h1.2L4.9 2.7H3.6z"/></svg>
-          </a>
-        </span>
-      </footer>
+        <article class="module-card">
+          <span class="tag">Future</span>
+          <h2>Other tools</h2>
+          <p>Additional geotechnical calculators and engineering references will be added here.</p>
+        </article>
+      </section>
     </div>
-
-    <section class="feature-strip" id="features">
-      <article class="feature-card">
-        <span class="feature-kicker">AS 4133.4.1</span>
-        <h2>Point load testing</h2>
-        <p>Rock strength evaluation using diametral, axial, block and irregular lump specimen calculations.</p>
-      </article>
-      <article class="feature-card">
-        <span class="feature-kicker">PSD</span>
-        <h2>Sieve analysis</h2>
-        <p>Particle size distribution summaries, D10, D30, D60, Cc and Cu values for soil gradation review.</p>
-      </article>
-      <article class="feature-card">
-        <span class="feature-kicker">Rock reference</span>
-        <h2>Material identification</h2>
-        <p>Common rock types and geotechnical descriptors to support site characterization and lab checks.</p>
-      </article>
-    </section>
-
-    <script>
-      const countdown = document.querySelector('[data-countdown]');
-      if (countdown) {
-        const target = new Date(countdown.dataset.countdown).getTime();
-        const updateCountdown = () => {
-          const now = Date.now();
-          const distance = Math.max(target - now, 0);
-          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-          const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
-          const minutes = Math.floor((distance / (1000 * 60)) % 60);
-          const seconds = Math.floor((distance / 1000) % 60);
-
-          document.getElementById('cdD').textContent = String(days).padStart(2, '0');
-          document.getElementById('cdH').textContent = String(hours).padStart(2, '0');
-          document.getElementById('cdM').textContent = String(minutes).padStart(2, '0');
-          document.getElementById('cdS').textContent = String(seconds).padStart(2, '0');
-        };
-        updateCountdown();
-        setInterval(updateCountdown, 1000);
-      }
-
-      const yearNode = document.querySelector('[data-year]');
-      if (yearNode) yearNode.textContent = new Date().getFullYear();
-    </script>
 
     <div class="signature">sameera jayathunge</div>
   </body>
