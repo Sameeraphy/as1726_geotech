@@ -11,10 +11,7 @@ const rockData = [
     hardness: '6–7 Mohs',
     porosity: 'Low',
     commonUses: ['Countertops', 'Building stone', 'Kerbs', 'Monuments'],
-    images: [
-      'https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80'
-    ]
+    images: ['https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1200&q=80']
   },
   {
     name: 'Basalt',
@@ -28,10 +25,7 @@ const rockData = [
     hardness: '5–6 Mohs',
     porosity: 'Very low',
     commonUses: ['Road aggregate', 'Rail ballast', 'Dimension stone', 'Basalt fibre'],
-    images: [
-      'https://images.unsplash.com/photo-1613324205360-0e6c4b3c0f7b?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80'
-    ]
+    images: ['https://images.unsplash.com/photo-1613324205360-0e6c4b3c0f7b?auto=format&fit=crop&w=1200&q=80']
   },
   {
     name: 'Sandstone',
@@ -45,10 +39,7 @@ const rockData = [
     hardness: '6–7 Mohs',
     porosity: 'Moderate',
     commonUses: ['Building stone', 'Sand filter media', 'Paving', 'Cladding'],
-    images: [
-      'https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=900&q=80'
-    ]
+    images: ['https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1200&q=80']
   },
   {
     name: 'Limestone',
@@ -62,10 +53,7 @@ const rockData = [
     hardness: '3–4 Mohs',
     porosity: 'Moderate to high',
     commonUses: ['Cement production', 'Lime', 'Aggregates', 'Dimension stone'],
-    images: [
-      'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=900&q=80'
-    ]
+    images: ['https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80']
   },
   {
     name: 'Mudstone',
@@ -79,10 +67,21 @@ const rockData = [
     hardness: '2–3 Mohs',
     porosity: 'Moderate to high',
     commonUses: ['Shale gas source rock', 'Ceramic raw material', 'Fill material', 'Foundations'],
-    images: [
-      'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=900&q=80'
-    ]
+    images: ['https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1200&q=80']
+  },
+  {
+    name: 'Coal',
+    category: 'Sedimentary',
+    description:
+      'Coal is a combustible sedimentary rock formed from the accumulation and lithification of plant matter under heat and pressure over long geological time. It is an important fuel resource and can be associated with carbonaceous sedimentary sequences.',
+    mineralogy: 'Carbon, volatile matter, ash',
+    color: 'Black to dark brown',
+    texture: 'Banding, brittle, carbonaceous',
+    density: '1.2–1.8 g/cm³',
+    hardness: '1–2 Mohs',
+    porosity: 'Variable, often low',
+    commonUses: ['Power generation', 'Coking coal', 'Industrial fuel', 'Carbon products'],
+    images: ['https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=80']
   },
   {
     name: 'Marble',
@@ -96,10 +95,7 @@ const rockData = [
     hardness: '3–5 Mohs',
     porosity: 'Low',
     commonUses: ['Floor tiles', 'Sculpture', 'Facade panels', 'Countertops'],
-    images: [
-      'https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=900&q=80'
-    ]
+    images: ['https://images.unsplash.com/photo-1523217582562-09d0def993a6?auto=format&fit=crop&w=1200&q=80']
   },
   {
     name: 'Slate',
@@ -113,10 +109,7 @@ const rockData = [
     hardness: '3–4 Mohs',
     porosity: 'Low',
     commonUses: ['Roofing', 'Flooring', 'Blackboards', 'Cladding'],
-    images: [
-      'https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80'
-    ]
+    images: ['https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1200&q=80']
   },
   {
     name: 'Quartzite',
@@ -130,10 +123,7 @@ const rockData = [
     hardness: '7 Mohs',
     porosity: 'Very low',
     commonUses: ['Dimension stone', 'Aggregate', 'Rail ballast', 'Decorative stone'],
-    images: [
-      'https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=900&q=80',
-      'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=900&q=80'
-    ]
+    images: ['https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80']
   }
 ];
 
