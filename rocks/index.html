@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Type Reference</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="page-header">
+        <div>
+          <p class="eyebrow">Geology reference</p>
+          <h1>Rock Type Finder</h1>
+        </div>
+      </header>
+
+      <main class="search-panel panel">
+        <label for="rockSearch">Search rock type</label>
+        <div class="search-row">
+          <input id="rockSearch" list="rockList" placeholder="Type a rock name..." />
+          <button id="viewBtn" type="button">View details</button>
+        </div>
+        <datalist id="rockList"></datalist>
+      </main>
+
+      <main id="result" class="result-panel panel" aria-live="polite">
+        <div class="empty-state">Select or search a rock type to view its description and properties.</div>
+      </main>
+    </div>
+
+    <div class="signature">sameera jayathunge</div>
+    <script src="script.js"></script>
+  </body>
+</html>
