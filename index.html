@@ -45,16 +45,13 @@
 
           <div class="field-group">
             <label for="kFactor">UCS conversion factor, K</label>
-            <select id="kFactor">
-              <option value="23">23.0 - Granite</option>
-              <option value="20">20.0 - Basalt</option>
-              <option value="14">14.0 - Limestone</option>
-              <option value="12">12.0 - Sandstone</option>
-              <option value="10">10.0 - Siltstone</option>
-              <option value="22.5">22.5 - Mudstone / shale</option>
-              <option value="15">15.0 - Schist / gneiss</option>
-              <option value="18">18.0 - Marble</option>
-            </select>
+            <input
+              id="kFactor"
+              type="number"
+              step="0.1"
+              min="0.1"
+              placeholder="e.g. 23.0"
+            />
           </div>
 
           <div id="dynamicInputs"></div>
@@ -85,6 +82,7 @@
       </main>
     </div>
 
+    <div class="signature">sameera jayathunge</div>
     <script src="script.js"></script>
   </body>
 </html>

@@ -196,7 +196,7 @@ function calculate() {
     const material = materialTable.rock;
     const ucsFactor = Number(kFactorSelect.value);
     if (!Number.isFinite(ucsFactor) || ucsFactor <= 0) {
-      throw new Error('Select a valid UCS conversion factor, K.');
+      throw new Error('Enter a valid UCS conversion factor, K.');
     }
     const sizeCorrection = Math.pow(de / 50, material.exponent);
     const is50 = isIndex * sizeCorrection;
@@ -274,15 +274,10 @@ function calculate() {
   }
 }
 
-function syncKFactorForRockType() {
-  const rockType = rockTypeTable[rockTypeSelect.value] || rockTypeTable.granite;
-  kFactorSelect.value = String(rockType.factor);
-}
-
 function resetForm() {
   typeSelect.value = 'diametral';
   rockTypeSelect.value = 'granite';
-  syncKFactorForRockType();
+  kFactorSelect.value = '';
   peakLoadInput.value = '';
   loadUnit.value = 'kN';
   renderTypeInputs();
@@ -297,13 +292,12 @@ typeSelect.addEventListener('change', () => {
 });
 
 rockTypeSelect.addEventListener('change', () => {
-  syncKFactorForRockType();
   if (resultsContainer.innerHTML && !resultsContainer.classList.contains('results-empty')) {
     calculate();
   }
 });
 
-kFactorSelect.addEventListener('change', () => {
+kFactorSelect.addEventListener('input', () => {
   if (resultsContainer.innerHTML && !resultsContainer.classList.contains('results-empty')) {
     calculate();
   }
@@ -312,5 +306,4 @@ kFactorSelect.addEventListener('change', () => {
 document.getElementById('calculateBtn').addEventListener('click', calculate);
 document.getElementById('resetBtn').addEventListener('click', resetForm);
 
-syncKFactorForRockType();
 renderTypeInputs();
