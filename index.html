@@ -3,112 +3,132 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AS 4133.4.1 Point Load Test Calculator</title>
+    <title>Geotechnical Engineering Tools</title>
+    <meta
+      name="description"
+      content="Geotechnical engineering tools and calculators for point load tests, soil grading, and rock classification."
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <div class="page-shell">
-      <div class="construction-banner">Geotechnical Tools Index • Under Construction</div>
+  <body class="landing-page">
+    <div class="screen screen-photo">
+      <img
+        class="backdrop"
+        src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1800&q=80"
+        alt="Geotechnical engineering site"
+      />
 
-      <header class="page-header geo-header">
-        <div class="hero-copy">
-          <p class="eyebrow">AS 4133.4.1</p>
-          <h1>Point Load Test Calculator</h1>
-          <p class="intro-text">
-            Geotechnical laboratory index page for rock strength assessments and related testing tools.
-            This page is being expanded for additional site calculations and field references.
-          </p>
-        </div>
-        <div class="status-card">
-          <span class="status-label">Status</span>
-          <strong>Live calculator</strong>
-          <small>Core testing module</small>
-        </div>
+      <header class="screen-head">
+        <a class="wordmark" href="/">
+          <span class="wordmark-mark" aria-hidden="true">G</span>
+          GeoLab Index
+        </a>
+
+        <nav class="variant-switch" aria-label="Main navigation">
+          <a class="active" href="/point-load-test-calculator/">Point Load</a>
+          <a href="#features">PSD</a>
+          <a href="#features">Rock Types</a>
+          <a href="#features">Lab Index</a>
+        </nav>
       </header>
 
-      <main class="tool-strip">
-        <div class="mini-tool active">
-          <span class="tool-tag">AS 4133.4.1</span>
-          <strong>Point load</strong>
-        </div>
-        <div class="mini-tool">
-          <span class="tool-tag">PSD</span>
-          <strong>Coming soon</strong>
-        </div>
-        <div class="mini-tool">
-          <span class="tool-tag">CPT</span>
-          <strong>Coming soon</strong>
-        </div>
-      </main>
+      <main class="screen-body">
+        <div class="hero-copy">
+          <span class="badge badge-subtle">Launching soon</span>
+          <h1>Geotechnical tools for field, lab and rock assessment</h1>
+          <p>
+            Our engineering portal is being developed for practical soil, rock and testing calculations.
+            The first live module is the AS 4133.4.1 point load calculator for rock strength assessment.
+          </p>
 
-      <main class="app-grid">
-        <section class="panel input-panel">
-          <h2>Sample configuration</h2>
-
-          <div class="field-group">
-            <label for="sampleType">Sample type</label>
-            <select id="sampleType">
-              <option value="diametral">Diametral core</option>
-              <option value="axial">Axial core</option>
-              <option value="block">Block</option>
-              <option value="irregular">Irregular lump</option>
-            </select>
-          </div>
-
-          <div class="field-group">
-            <label for="rockType">Rock type</label>
-            <select id="rockType">
-              <option value="granite">Granite</option>
-              <option value="basalt">Basalt</option>
-              <option value="limestone">Limestone</option>
-              <option value="sandstone">Sandstone</option>
-              <option value="siltstone">Siltstone</option>
-              <option value="mudstone">Mudstone / shale</option>
-              <option value="schist">Schist / gneiss</option>
-              <option value="marble">Marble</option>
-            </select>
-          </div>
-
-          <div class="field-group">
-            <label for="kFactor">UCS conversion factor, K</label>
-            <input
-              id="kFactor"
-              type="number"
-              step="0.1"
-              min="0.1"
-              placeholder="e.g. 23.0"
-            />
-          </div>
-
-          <div id="dynamicInputs"></div>
-
-          <div class="field-group inline unit-group">
-            <label for="loadUnit">Load at failure</label>
-            <div class="inline-inputs">
-              <input id="peakLoad" type="number" step="0.01" placeholder="e.g. 12.5" />
-              <select id="loadUnit">
-                <option value="kN">kN</option>
-                <option value="N">N</option>
-              </select>
+          <div class="countdown" role="timer" aria-live="off" data-countdown="2026-10-01T09:00:00Z">
+            <div class="count-cell">
+              <span class="count-value" id="cdD">--</span>
+              <span class="count-label">Days</span>
+            </div>
+            <div class="count-cell">
+              <span class="count-value" id="cdH">--</span>
+              <span class="count-label">Hours</span>
+            </div>
+            <div class="count-cell">
+              <span class="count-value" id="cdM">--</span>
+              <span class="count-label">Minutes</span>
+            </div>
+            <div class="count-cell">
+              <span class="count-value" id="cdS">--</span>
+              <span class="count-label">Seconds</span>
             </div>
           </div>
 
-          <div class="button-row">
-            <button id="calculateBtn" type="button">Calculate UCS</button>
-            <button id="resetBtn" type="button" class="secondary">Reset</button>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="/point-load-test-calculator/">Open Point Load Calculator</a>
+            <a class="btn btn-secondary" href="#features">View planned modules</a>
           </div>
-        </section>
 
-        <section class="panel results-panel">
-          <h2>Results</h2>
-          <div id="results" class="results-empty">
-            Select a sample type and enter the test data to calculate the point load strength index.
-          </div>
-        </section>
+          <form class="notify" action="#" method="get">
+            <label class="visually-hidden" for="notifyEmail">Email address</label>
+            <input id="notifyEmail" type="email" placeholder="you@example.com" />
+            <button type="submit">Request access</button>
+          </form>
+        </div>
       </main>
+
+      <footer class="screen-foot">
+        <p>&copy; <span data-year></span> GeoLab Index</p>
+        <span class="social" aria-label="Social links">
+          <a href="#" aria-label="LinkedIn">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3.4 5.5h2.2V13H3.4zm1.1-3.3a1.3 1.3 0 1 1 0 2.6 1.3 1.3 0 0 1 0-2.6zM7.2 5.5h2.1v1c.3-.6 1.1-1.2 2.2-1.2 2 0 2.5 1.3 2.5 3.1V13h-2.2V8.9c0-1-.2-1.7-1.2-1.7s-1.3.7-1.3 1.6V13H7.2z"/></svg>
+          </a>
+          <a href="#" aria-label="X">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M12.6 1.5h2.2l-4.8 5.5 5.7 7.5h-4.5l-3.5-4.6-4 4.6H1.5l5.2-5.9L1.2 1.5h4.6l3.2 4.2zm-.8 11.7h1.2L4.9 2.7H3.6z"/></svg>
+          </a>
+        </span>
+      </footer>
     </div>
 
+    <section class="feature-strip" id="features">
+      <article class="feature-card">
+        <span class="feature-kicker">AS 4133.4.1</span>
+        <h2>Point load testing</h2>
+        <p>Rock strength evaluation using diametral, axial, block and irregular lump specimen calculations.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-kicker">PSD</span>
+        <h2>Sieve analysis</h2>
+        <p>Particle size distribution summaries, D10, D30, D60, Cc and Cu values for soil gradation review.</p>
+      </article>
+      <article class="feature-card">
+        <span class="feature-kicker">Rock reference</span>
+        <h2>Material identification</h2>
+        <p>Common rock types and geotechnical descriptors to support site characterization and lab checks.</p>
+      </article>
+    </section>
+
+    <script>
+      const countdown = document.querySelector('[data-countdown]');
+      if (countdown) {
+        const target = new Date(countdown.dataset.countdown).getTime();
+        const updateCountdown = () => {
+          const now = Date.now();
+          const distance = Math.max(target - now, 0);
+          const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+          const minutes = Math.floor((distance / (1000 * 60)) % 60);
+          const seconds = Math.floor((distance / 1000) % 60);
+
+          document.getElementById('cdD').textContent = String(days).padStart(2, '0');
+          document.getElementById('cdH').textContent = String(hours).padStart(2, '0');
+          document.getElementById('cdM').textContent = String(minutes).padStart(2, '0');
+          document.getElementById('cdS').textContent = String(seconds).padStart(2, '0');
+        };
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+      }
+
+      const yearNode = document.querySelector('[data-year]');
+      if (yearNode) yearNode.textContent = new Date().getFullYear();
+    </script>
+
     <div class="signature">sameera jayathunge</div>
-    <script src="script.js"></script>
   </body>
 </html>
